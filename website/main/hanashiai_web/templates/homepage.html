@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<body>
+
+<style>
+
+    body{
+        background-color: rgb(121, 167, 201);
+    }
+</style>
+<title> 「話し合い、他の人と話す場所です！」 </title>
+
+
+
+
+
+
+
+
+<h2>Welcome to the website!</h2>
+
+<a href="{%url 'signup'%}">Sign Up</a>
+{% for post in object_list %}
+<li><a href="{%url 'post_details' post.pk%}" class="btn btn-primary" > <h3> Title - {{post.title}} </h3> </a>  </h1> <h1> {{ post.date }}</h1>  <h1>Author - {{post.author}}</h1>
+<h1>{{post.body}}</h1></li><br/>
+{% endfor %}
+
+
+
+
+</body>
+</body>
+</html>
+{% endblock %}
